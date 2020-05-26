@@ -1,6 +1,6 @@
 {
   "name": "@codeyourfuture/cra-template",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Create React App template for Code Your Future",
   "private": false,
   "publishConfig": {
