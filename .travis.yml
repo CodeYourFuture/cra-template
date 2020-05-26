@@ -1,5 +1,5 @@
 os: linux
-dist: xenial
+dist: bionic
 
 language: node_js
 node_js: 12
@@ -10,6 +10,6 @@ script: npm run lint
 deploy:
   provider: npm
   email: $NPM_EMAIL_ADDRESS
-  api_key: $NPM_AUTH_TOKEN
+  api_token: $NPM_AUTH_TOKEN
   on:
     tags: true
