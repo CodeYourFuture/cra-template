@@ -2,7 +2,7 @@
   "name": "@codeyourfuture/cra-template",
   "version": "0.0.1",
   "description": "Create React App template for Code Your Future",
-  "main": "index.js",
+  "main": "template.json",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,12 +13,19 @@
   "keywords": [
     "react",
     "template",
-    "cra"
+    "create-react-app"
   ],
   "author": "Jonathan Sharpe <mail@jonrshar.pe>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/CodeYourFuture/cra-template/issues"
   },
-  "homepage": "https://github.com/CodeYourFuture/cra-template#readme"
+  "homepage": "https://github.com/CodeYourFuture/cra-template#readme",
+  "files": [
+    "template",
+    "template.json"
+  ],
+  "engines": {
+    "node": ">=10"
+  }
 }
