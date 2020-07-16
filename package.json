@@ -9,7 +9,11 @@
   "main": "template.json",
   "scripts": {
     "lint": "eslint template/",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test-app": "npm --prefix ./test-app run",
+    "test-app:lint": "npm run test-app -- lint",
+    "test-app:start": "concurrently -k -s first -n \"app,up?\" \"npm run test-app -- start\" \"wait-on -t 10000 http-get://localhost:3000\"",
+    "pretest": "rimraf ./test-app && npx create-react-app@latest test-app --use-npm --template file:.",
+    "test": "npm run test-app:lint && npm run test-app:start"
   },
   "repository": {
     "type": "git",
@@ -49,12 +53,15 @@
     "@typescript-eslint/eslint-plugin": "^2.34.0",
     "@typescript-eslint/parser": "^2.34.0",
     "babel-eslint": "^10.1.0",
+    "concurrently": "^5.2.0",
     "eslint": "^6.8.0",
     "eslint-config-react-app": "^5.2.1",
     "eslint-plugin-flowtype": "^4.7.0",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.20.0",
-    "eslint-plugin-react-hooks": "^2.5.1"
+    "eslint-plugin-react-hooks": "^2.5.1",
+    "rimraf": "^3.0.2",
+    "wait-on": "^5.1.0"
   }
 }
