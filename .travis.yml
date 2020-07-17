@@ -16,4 +16,5 @@ deploy:
   email: $NPM_EMAIL_ADDRESS
   api_token: $NPM_AUTH_TOKEN
   on:
+    branch: main
     tags: true
