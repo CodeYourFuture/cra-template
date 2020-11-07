@@ -59,7 +59,7 @@
     "@codeyourfuture/eslint-config-standard": "^2.0.3",
     "babel-eslint": "^10.1.0",
     "concurrently": "^5.3.0",
-    "cra-template": "1.0.3",
+    "cra-template": "1.1.0",
     "cross-env": "^7.0.2",
     "eslint": "^7.13.0",
     "eslint-config-react-app": "^6.0.0",

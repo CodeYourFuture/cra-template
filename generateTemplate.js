@@ -49,7 +49,6 @@ function createTemplateJson() {
 function removeUnwantedFiles() {
 	[
 		"src/App.test.js",
-		"src/serviceWorker.js",
 		"src/setupTests.js",
 	].forEach((file) => {
 		fs.unlinkSync(pathTo("template", file));
@@ -59,9 +58,7 @@ function removeUnwantedFiles() {
 function updateIndex() {
 	let index = fs.readFileSync(pathTo("template/src/index.js"), "utf8");
 	index = `import 'stop-runaway-react-effects/hijack';\n\n${index}`
-		.replace(/<React\.StrictMode>\s+([\s\w<>/]+?)\s+<\/React\.StrictMode>/, "$1")
-		.replace(/.*serviceWorker.*\n/g, "")
-		.replace(/\/\/.*\n/g, "");
+		.replace(/<React\.StrictMode>\s+([\s\w<>/]+?)\s+<\/React\.StrictMode>/, "$1");
 	fs.writeFileSync(pathTo("template/src/index.js"), index);
 }
 
