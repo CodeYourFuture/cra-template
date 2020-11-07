@@ -17,7 +17,7 @@ function createTemplateJson() {
 	const overrides = {
 		"package": {
 			"dependencies": {
-				"@codeyourfuture/eslint-config-standard": "^2.0.1",
+				"@codeyourfuture/eslint-config-standard": "^2.0.3",
 				"stop-runaway-react-effects": "^2.0.0",
 			},
 			"eslintConfig": {
