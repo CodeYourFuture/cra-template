@@ -15,5 +15,5 @@ This pull request introduces a:
 ### Checklist
 
 - [ ] I have made this pull request to the `master` branch
-- [ ] I have run all of the automated validation (`npm run build`, `npm run lint` and `npm run test`)
+- [ ] I have run all of the automated validation (`npm run ship`)
 - [ ] I have added myself to the `"contributors"` list in the `package.json` (or do not want to)

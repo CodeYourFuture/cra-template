@@ -11,12 +11,14 @@
     "build": "node generateTemplate.js && npm run lint:template -- --fix",
     "lint": "eslint .",
     "lint:template": "eslint template/",
+    "ship": "npm run lint && npm run build && npm run test",
     "test-app": "npm --prefix ./test-app run",
     "test-app:build": "npm run test-app -- build",
     "test-app:lint": "npm run test-app -- lint",
-    "test-app:start": "concurrently -k -s first -n \"app,up?\" \"cross-env BROWSER=none npm run test-app -- start\" \"wait-on -t 10000 http-get://localhost:3000\"",
+    "test-app:start": "cross-env BROWSER=none npm run test-app -- start",
+    "test-app:verify": "concurrently -k -s first -n \"app,up?\" \"npm run test-app:start\" \"wait-on -t 30000 http-get://localhost:3000\"",
     "pretest": "rimraf test-app/ && npx create-react-app@latest test-app --use-npm --template file:.",
-    "test": "npm run test-app:build && npm run test-app:lint && npm run test-app:start"
+    "test": "npm run test-app:build && npm run test-app:lint && npm run test-app:verify"
   },
   "repository": {
     "type": "git",
