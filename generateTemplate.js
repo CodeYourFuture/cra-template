@@ -3,9 +3,12 @@ const fs = require("fs-extra");
 const path = require("path");
 const merge = require("lodash.merge");
 
-[copyBaseTemplate, createTemplateJson, updateIndex, removeUnwantedFiles].forEach((task) => {
-	task();
-});
+[
+	copyBaseTemplate,
+	createTemplateJson,
+	updateIndex,
+	removeUnwantedFiles,
+].forEach((task) => task());
 
 function copyBaseTemplate() {
 	fs.emptyDirSync(pathTo("template"));
@@ -14,10 +17,13 @@ function copyBaseTemplate() {
 
 function createTemplateJson() {
 	const defaults = require("cra-template/template.json");
+	const { devDependencies } = require("./package.json");
+	const eslintConfig = "@codeyourfuture/eslint-config-standard";
+
 	const overrides = {
 		"package": {
 			"dependencies": {
-				"@codeyourfuture/eslint-config-standard": "^2.0.3",
+				[eslintConfig]: devDependencies[eslintConfig],
 				"stop-runaway-react-effects": "^2.0.0",
 			},
 			"eslintConfig": {
