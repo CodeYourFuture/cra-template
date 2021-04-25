@@ -45,7 +45,7 @@
   "eslintConfig": {
     "extends": [
       "react-app",
-      "@codeyourfuture/standard"
+      "@codeyourfuture/eslint-config-standard/lax"
     ],
     "ignorePatterns": [
       "test-app/",
@@ -58,7 +58,7 @@
     }
   },
   "devDependencies": {
-    "@codeyourfuture/eslint-config-standard": "^2.0.3",
+    "@codeyourfuture/eslint-config-standard": "^2.1.0",
     "babel-eslint": "^10.1.0",
     "concurrently": "^5.3.0",
     "cra-template": "1.1.2",

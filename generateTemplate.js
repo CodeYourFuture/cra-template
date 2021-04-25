@@ -29,7 +29,7 @@ function createTemplateJson() {
 			"eslintConfig": {
 				"extends": [
 					"react-app",
-					"@codeyourfuture/standard",
+					"@codeyourfuture/eslint-config-standard/lax",
 				],
 				"ignorePatterns": [
 					"build/",
