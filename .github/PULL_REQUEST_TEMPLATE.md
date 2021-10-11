@@ -1,12 +1,6 @@
 Thank you for contributing! To help the review process, please provide the following:
 
 ### Proposal
-This pull request introduces a:
-
-- [ ] Change to the rules
-- [ ] Change to the principles
-- [ ] Something else
-
 <!-- Provide a short description of the change you are proposing and the reasons for it. -->
 
 ### Related
@@ -14,6 +8,6 @@ This pull request introduces a:
 
 ### Checklist
 
-- [ ] I have made this pull request to the `master` branch
+- [ ] I have made this pull request to the `main` branch
 - [ ] I have run all of the automated validation (`npm run ship`)
 - [ ] I have added myself to the `"contributors"` list in the `package.json` (or do not want to)
