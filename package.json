@@ -17,7 +17,7 @@
     "test-app:lint": "npm run test-app -- lint",
     "test-app:start": "cross-env BROWSER=none npm run test-app -- start",
     "test-app:verify": "concurrently -k -s first -n \"app,up?\" \"npm run test-app:start\" \"wait-on -t 30000 http-get://localhost:3000\"",
-    "pretest": "rimraf test-app/ && npx create-react-app@latest test-app --use-npm --template file:.",
+    "pretest": "rimraf test-app/ && cross-env npm_config_yes=true npx create-react-app@latest test-app --use-npm --template file:.",
     "test": "npm run test-app:build && npm run test-app:lint && npm run test-app:verify"
   },
   "repository": {
