@@ -10,7 +10,7 @@ jobs:
     - uses: actions/setup-node@v2
       with:
         cache: 'npm'
-        node-version: '12'
+        node-version: '14'
     - run: npm ci
     - run: npm run build
     - run: npm run lint
@@ -24,7 +24,7 @@ jobs:
     - uses: actions/setup-node@v2
       with:
         cache: 'npm'
-        node-version: '12'
+        node-version: '14'
     - run: npm ci
     - run: npm run build
     - run: echo '//registry.npmjs.org/:_authToken=${NPM_AUTH_TOKEN}' > ~/.npmrc
