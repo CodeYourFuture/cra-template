@@ -35,6 +35,7 @@
     "url": "https://github.com/CodeYourFuture/cra-template/issues"
   },
   "homepage": "https://github.com/CodeYourFuture/cra-template#readme",
+  "funding": "https://github.com/sponsors/CodeYourFuture",
   "files": [
     "template",
     "template.json"
