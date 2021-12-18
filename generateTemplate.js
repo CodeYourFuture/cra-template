@@ -18,12 +18,15 @@ function copyBaseTemplate() {
 function createTemplateJson() {
 	const defaults = require("cra-template/template.json");
 	const { devDependencies } = require("./package.json");
-	const eslintConfig = "@codeyourfuture/eslint-config-standard";
+	const sharedDeps = [
+		"@codeyourfuture/eslint-config-standard",
+		"cross-env",
+	];
 
 	const overrides = {
 		"package": {
 			"dependencies": {
-				[eslintConfig]: devDependencies[eslintConfig],
+				...sharedDeps.reduce((deps, dep) => ({ ...deps, [dep]: devDependencies[dep] }), {}),
 				"stop-runaway-react-effects": "^2.0.0",
 			},
 			"eslintConfig": {
@@ -38,6 +41,7 @@ function createTemplateJson() {
 			},
 			"scripts": {
 				"lint": "eslint .",
+				"start": "cross-env ESLINT_NO_DEV_ERRORS=true react-scripts start",
 				"test": "echo \"Error: no test specified\" && exit 1",
 			},
 		},
