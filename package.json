@@ -60,7 +60,6 @@
   },
   "devDependencies": {
     "@codeyourfuture/eslint-config-standard": "^3.0.3",
-    "babel-eslint": "^10.1.0",
     "concurrently": "^7.6.0",
     "cra-template": "1.2.0",
     "cross-env": "^7.0.3",
